@@ -20,6 +20,9 @@ If run from the command-line, it will accept a HTML-style RGB
 hex triplet of the form #rrggbb as an argument. If run from 
 Explorer, it will present a standard colour picker.
 
+Clicking on the backdrop window with the left mouse button or 
+pressing ESC will close it.
+
 
 ## Caveats
 
