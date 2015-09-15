@@ -1,0 +1,32 @@
+#include "Globals.h"
+
+/* Version constants */
+#define VS_FFI_FILEFLAGSMASK 0x3F
+#define VOS__WINDOWS32 4
+#define VFT_APP 1
+#define VFT2_UNKNOWN 0
+
+/* Version info */
+1 VERSIONINFO
+FILEVERSION    APP_VERSION_MAJOR,APP_VERSION_MINOR,0,APP_VERSION_BUILD
+PRODUCTVERSION APP_VERSION_MAJOR,APP_VERSION_MINOR,0,APP_VERSION_BUILD
+FILEFLAGSMASK  VS_FFI_FILEFLAGSMASK
+FILEFLAGS      0
+FILEOS         VOS__WINDOWS32
+FILETYPE       VFT_APP
+FILESUBTYPE    VFT2_UNKNOWN
+BEGIN
+	BLOCK "StringFileInfo"
+	BEGIN
+		BLOCK "040904E4"
+		BEGIN
+			VALUE "CompanyName",      "Kaia Ltd.\r\nhttp://www.kaia.ie"
+			VALUE "FileDescription",  gAppTitle
+			VALUE "FileVersion",      APP_VERSION_STRING
+			VALUE "InternalName",     gAppTitle
+			VALUE "LegalCopyright",   "© 2015 Kaia Ltd. All rights reserved"
+			VALUE "ProductName",      gAppTitle
+			VALUE "ProductVersion",   APP_VERSION_STRING
+		END
+	END
+END
