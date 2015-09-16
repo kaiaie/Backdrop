@@ -2,7 +2,7 @@ SRC := Main.c Backdrop.c Utils.c
 RC := BackdropResources.rc
 OBJ := $(patsubst %.c,%.o,$(SRC)) $(patsubst %.rc,%.o,$(RC))
 EXE := Backdrop.exe
-OPT := -Wall -g -D_WIN32_WINNT=0x0501
+OPT := -Wall -pedantic -O2 -D_WIN32_WINNT=0x0501
 LIB := -mwindows
 
 .PHONY: all
