@@ -62,8 +62,8 @@ HWND CreateBackdropWindow(COLORREF backgroundColor)
 
 	backdropWindow = CreateWindow(
 		backdropClassName, 
-		gAppTitle,
-		WS_OVERLAPPEDWINDOW,
+		NULL,
+		WS_BORDER,
 		desktopRect.left,
 		desktopRect.top,
 		(desktopRect.right - desktopRect.left),
@@ -77,6 +77,17 @@ HWND CreateBackdropWindow(COLORREF backgroundColor)
 	{
 		DisplayErrorMessage("CreateWindow() failed.");
 	}
+	/* Hide all window "furniture" */
+	SetWindowLong(backdropWindow, GWL_STYLE, 0);
+	SetWindowPos(
+		backdropWindow, 
+		0, 
+		desktopRect.left,
+		desktopRect.top,
+		(desktopRect.right - desktopRect.left),
+		(desktopRect.bottom - desktopRect.top),
+		SWP_FRAMECHANGED
+	);
 	
 	return backdropWindow;
 }
